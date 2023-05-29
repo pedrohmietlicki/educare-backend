@@ -1,8 +1,12 @@
-import { User, UserCreate } from 'src/entities/user';
+import { User } from 'src/entities/user';
 
-export interface UserRepository {
+export default interface UserRepository {
   getUsers(): Promise<User[]>;
   getUserById(id: string): Promise<User>;
-  createUser(user: UserCreate): Promise<User>;
+  createUser(user: {
+    name: string;
+    email: string;
+    password: string;
+  }): Promise<User>;
   getUserByEmail(email: string): Promise<User | null>;
 }
