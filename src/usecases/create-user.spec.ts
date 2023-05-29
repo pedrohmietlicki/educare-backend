@@ -1,6 +1,6 @@
 import { User } from 'src/entities/user';
 import { UserCreate } from 'src/models/user.model';
-import { UserRepository } from 'src/repositories/user.repository';
+import UserRepository from 'src/repositories/user.repository';
 import CreateUser from './create-user';
 import { UserExists } from '../errors/user.error';
 import * as bcrypt from 'bcrypt';

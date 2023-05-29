@@ -1,5 +1,5 @@
 import { UserCreate } from 'src/models/user.model';
-import { UserRepository } from 'src/repositories/user.repository';
+import UserRepository from 'src/repositories/user.repository';
 import * as bcrypt from 'bcrypt';
 import { UserExists } from '../errors/user.error';
 export default class CreateUser {
