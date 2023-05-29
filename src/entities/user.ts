@@ -17,8 +17,3 @@ export class User {
     this.id = id;
   }
 }
-export interface UserCreate {
-  name: string;
-  email: string;
-  password: string;
-}

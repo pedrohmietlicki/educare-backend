@@ -21,4 +21,8 @@ export class UserRepositoryMongo implements UserRepository {
     const userCreated = await this.userModel.create(user);
     return userCreated.toDomain();
   }
+  async getUserByEmail(email: string): Promise<User | null> {
+    const user = await this.userModel.findOne({ email });
+    return user.toDomain();
+  }
 }
