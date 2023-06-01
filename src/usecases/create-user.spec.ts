@@ -45,11 +45,7 @@ describe('createUser', () => {
       1,
       userToCreate.email,
     );
-    expect(hashFnMock).toHaveBeenNthCalledWith(
-      1,
-      userToCreate.password,
-      'senha',
-    );
+    expect(hashFnMock).toHaveBeenNthCalledWith(1, userToCreate.password, 10);
     expect(userRepository.createUser).toHaveBeenNthCalledWith(1, {
       ...userToCreate,
       password: hashMock,
