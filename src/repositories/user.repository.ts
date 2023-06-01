@@ -2,7 +2,7 @@ import { User } from 'src/entities/user';
 
 export default interface UserRepository {
   getUsers(): Promise<User[]>;
-  getUserById(id: string): Promise<User>;
+  getUserById(id: string): Promise<User | null>;
   createUser(user: {
     name: string;
     email: string;
