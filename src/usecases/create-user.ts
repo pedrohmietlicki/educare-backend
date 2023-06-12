@@ -7,7 +7,7 @@ export default class CreateUser {
   async perform({ email, password, name }: UserCreate) {
     if (await this.checkIfExists(email)) throw new UserExists();
 
-    const hashPassword = await bcrypt.hash(password, 'senha');
+    const hashPassword = await bcrypt.hash(password, 10);
     return await this.userRepository.createUser({
       email,
       name,
