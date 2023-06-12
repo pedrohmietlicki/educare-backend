@@ -1,14 +1,12 @@
-import { HttpException } from '@nestjs/common';
-
-export class UserException extends HttpException {}
+export class UserException extends Error {}
 
 export class UserExists extends UserException {
   constructor() {
-    super('Já existe um usuário com esse email', 400);
+    super('Já existe um usuário com esse email');
   }
 }
 export class UserNotFound extends UserException {
   constructor() {
-    super('Usuário não encontrado', 404);
+    super('Usuário não encontrado');
   }
 }

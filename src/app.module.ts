@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppService } from './app.service';
-import { UserModule } from './presentation/user/user.module';
+import { UserModule } from './presentation/controllers/user/user.module';
 
 @Module({
   imports: [
