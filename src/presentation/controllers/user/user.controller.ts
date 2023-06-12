@@ -1,15 +1,17 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, UseFilters } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
-import { CreateUserDto } from 'src/dto/user.dto';
-import CreateUser from 'src/usecases/create-user';
+import { CreateUserDto } from '../../../dto/user.dto';
+import CreateUser from '../../../usecases/create-user';
+import { UserHttpException } from '../filters/user-http-exception.filter';
 
 @ApiTags('User')
 @Controller('user')
+@UseFilters(UserHttpException)
 export class UserController {
   constructor(private createUser: CreateUser) {}
 
